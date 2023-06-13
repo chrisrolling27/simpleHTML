@@ -1,53 +1,105 @@
 <head>
   <meta charset="UTF-8" />
   <title>simpleHTML</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Nunito:400,700"
+  />
 </head>
 
-<link rel="stylesheet" href="styles.css" />
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Nunito:400,700"
-/>
-<div class="card">
-  <div
-    class="card-image"
-    style="background-image: url(images/oakland.jpg)"
-  ></div>
-  <div class="card-content">
-    <h1>Oakland</h1>
-    <div class="subtitle">The Town</div>
-    <p>
-      Nestled on the east side of the San Francisco Bay, Oakland is a vibrant
-      tapestry of cultural diversity, urban innovation, and natural beauty. With
-      its colorful street murals, eclectic food scene, and stunning lakefront
-      parks, Oakland exudes an undeniable charm. This city is a treasure trove
-      for history buffs, foodies, and nature enthusiasts alike. Beyond its
-      iconic Lake Merritt and historic Jack London Square, Oakland's community
-      spirit and artistic flair make it a warm and inviting place that quickly
-      feels like home.
-    </p>
-    <div class="card-details">
-      <div class="card-details-inner">
-        <div class="read-more">
-          <a class="button" href="https://en.wikivoyage.org/wiki/Oakland">
-            Read Article
-          </a>
-        </div>
-        <div class="options">
-          <div class="comments">
-            <a href="#!">
-              <i class="fa fa-comments-o"></i>
-              16 comments
-            </a>
-          </div>
-          <div class="likes">
-            <a href="#!">
-              <i class="fa fa-heart-o"></i>
-              322 likes
-            </a>
+<body>
+  <input id="inputField" type="text" />
+  <button onClick="handleInput()">Next!</button>
+
+  <div id="cardsContainer">
+    <div class="card">
+      <div
+        class="card-image"
+        style="background-image: url(images/oakland.jpg)"
+      ></div>
+      <div class="card-content">
+        <h1>Oakland</h1>
+        <div class="subtitle">The Town</div>
+        <p>
+          Nestled on the east side of the San Francisco Bay, Oakland is a
+          vibrant tapestry of cultural diversity, urban innovation, and natural
+          beauty. With its colorful street murals, eclectic food scene, and
+          stunning lakefront parks, Oakland exudes an undeniable charm. This
+          city is a treasure trove for history buffs, foodies, and nature
+          enthusiasts alike. Beyond its iconic Lake Merritt and historic Jack
+          London Square, Oakland's community spirit and artistic flair make it a
+          warm and inviting place that quickly feels like home.
+        </p>
+        <div class="card-details">
+          <div class="card-details-inner">
+            <div class="read-more">
+              <a class="button" href="https://en.wikivoyage.org/wiki/Oakland">
+                Read Article
+              </a>
+            </div>
+            <div class="options">
+              <div class="comments">
+                <a href="#!">
+                  <i class="fa fa-comments-o"></i>
+                  16 comments
+                </a>
+              </div>
+              <div class="likes">
+                <a href="#!">
+                  <i class="fa fa-heart-o"></i>
+                  322 likes
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
+  <script>
+    let currentstate = 0;
+    let cardData = {};
+
+    function createCard(title, subtitle, paragraph) {
+      let card = document.createElement("div");
+      card.className = "card";
+
+      let cardTitle = document.createElement("h1");
+      createTitle.innerText = title;
+      let cardSubtitle = document.createElement("div");
+      cardSubtitle.innerText = subtitle;
+      let cardParagraph = document.createElement("p");
+      cardParagraph.innerText = paragraph;
+
+      card.appendChild(cardTitle);
+      card.appendChild(cardSubtitle);
+      card.appendChild(cardParagraph);
+
+      return card;
+    }
+
+    function handleInput() {
+      let inputField = document.getElementById("inputField");
+      let text = inputField.value;
+
+      if ((currentState = 0)) {
+        cardData.title = text;
+        inputField.value = "";
+        inputField.placeholder = "Enter subtitle...";
+        currentState++;
+      } else if ((currentState = 1)) {
+        cardData.subtitle = text;
+        inputField.value = "";
+        inputField.placeholder = "Enter paragraph...";
+        currentState++;
+      } else if ((currentState = 2)) {
+        cardData.paragraph = text;
+        inputField.value = "";
+        inputField.placeholder = "enter title??";
+        let currentState = 0;
+      }
+    }
+  </script>
+</body>
