@@ -9,8 +9,14 @@
 </head>
 
 <body>
-  <input id="inputField" type="text" />
-  <button onClick="addCard()">Next!</button>
+  <div className="adderContainer">
+    <form id="cardForm">
+      <input id="titleInput" type="text" />
+      <input id="subtitleInput" type="text" />
+      <textarea id="paragraphInput" type="textarea"> </textarea>
+      <button onClick="addCard()">Submit!</button>
+    </form>
+  </div>
 
   <div id="cardsContainer">
     <div class="card">
@@ -59,8 +65,16 @@
   </div>
 
   <script>
-    let currentstate = 0;
-    let cardData = {};
+    function addCard() {
+      let title = document.getElementsById("title").value;
+      let subtitle = document.getElementsById("subtitle").value;
+      let paragraph = document.getElementsById("paragraph").value;
+
+      let card = createCard(title, subtitle, paragraph);
+
+      let cardsContainer = document.getElementById("cardsContainer");
+      cardsContainer.appendChild(card);
+    }
 
     function createCard(title, subtitle, paragraph) {
       let card = document.createElement("div");
@@ -79,41 +93,5 @@
 
       return card;
     }
-
-    function addCard() {
-      let inputField = document.getElementById('inputField');
-      let text = inputField.value;
-
-      let card = createCard(text);
-
-      let cardsContainer = document.getElementById('cardsContainer');
-      cardsContainer.appendChild(card);
-
-      inputField.value='';
-    }
-
-    function handleInput() {
-      let inputField = document.getElementById("inputField");
-      let text = inputField.value;
-
-      if ((currentState = 0)) {
-        cardData.title = text;
-        inputField.value = "";
-        inputField.placeholder = "Enter subtitle...";
-        currentState++;
-      } else if ((currentState = 1)) {
-        cardData.subtitle = text;
-        inputField.value = "";
-        inputField.placeholder = "Enter paragraph...";
-        currentState++;
-      } else if ((currentState = 2)) {
-        cardData.paragraph = text;
-        inputField.value = "";
-        inputField.placeholder = "enter title??";
-        let currentState = 0;
-      }
-    }
-
-
   </script>
 </body>
