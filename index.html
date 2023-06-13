@@ -10,7 +10,7 @@
 
 <body>
   <input id="inputField" type="text" />
-  <button onClick="handleInput()">Next!</button>
+  <button onClick="addCard()">Next!</button>
 
   <div id="cardsContainer">
     <div class="card">
@@ -80,6 +80,18 @@
       return card;
     }
 
+    function addCard() {
+      let inputField = document.getElementById('inputField');
+      let text = inputField.value;
+
+      let card = createCard(text);
+
+      let cardsContainer = document.getElementById('cardsContainer');
+      cardsContainer.appendChild(card);
+
+      inputField.value='';
+    }
+
     function handleInput() {
       let inputField = document.getElementById("inputField");
       let text = inputField.value;
@@ -101,5 +113,7 @@
         let currentState = 0;
       }
     }
+
+
   </script>
 </body>
