@@ -7,9 +7,6 @@
   position: relative;
 }
 
-.card:hover {
-  box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.2);
-}
 
 .card-content {
   padding: 30px 30px 110px;
