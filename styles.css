@@ -1,7 +1,7 @@
 .card {
   flex: 1 1 50%;
   position: relative;
-  border: 1px solid #efefef;
+  border: 1px solid red;
   box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
@@ -90,4 +90,11 @@ a {
 
 .fa {
   margin-right: 0.25rem;
+}
+
+#cardsContainer {
+  
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
 }

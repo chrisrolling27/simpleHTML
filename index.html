@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div className="adderContainer">
+  <div class="adderContainer">
     <form id="cardForm">
       <input id="title" type="text" />
       <input id="subtitle" type="text" />
@@ -71,7 +71,7 @@
       let paragraph = document.getElementById("paragraph").value;
 
       let card = document.createElement("div");
-      card.className = "card";
+      card.classList = "card";
 
       let cardContent = document.createElement("div");
       cardContent.innerHTML = `
@@ -80,6 +80,8 @@
           <p> ${paragraph}</p>`;
 
       card.appendChild(cardContent);
+
+      let cardsContainer = document.getElementById("cardsContainer");
 
       cardsContainer.appendChild(card);
     }
