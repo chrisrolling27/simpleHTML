@@ -11,9 +11,9 @@
 <body>
   <div className="adderContainer">
     <form id="cardForm">
-      <input id="titleInput" type="text" />
-      <input id="subtitleInput" type="text" />
-      <textarea id="paragraphInput" type="textarea"> </textarea>
+      <input id="title" type="text" />
+      <input id="subtitle" type="text" />
+      <textarea id="paragraph" type="textarea"> </textarea>
       <button onClick="addCard()">Submit!</button>
     </form>
   </div>
@@ -66,32 +66,22 @@
 
   <script>
     function addCard() {
-      let title = document.getElementsById("title").value;
-      let subtitle = document.getElementsById("subtitle").value;
-      let paragraph = document.getElementsById("paragraph").value;
+      let title = document.getElementById("title").value;
+      let subtitle = document.getElementById("subtitle").value;
+      let paragraph = document.getElementById("paragraph").value;
 
-      let card = createCard(title, subtitle, paragraph);
-
-      let cardsContainer = document.getElementById("cardsContainer");
-      cardsContainer.appendChild(card);
-    }
-
-    function createCard(title, subtitle, paragraph) {
       let card = document.createElement("div");
       card.className = "card";
 
-      let cardTitle = document.createElement("h1");
-      createTitle.innerText = title;
-      let cardSubtitle = document.createElement("div");
-      cardSubtitle.innerText = subtitle;
-      let cardParagraph = document.createElement("p");
-      cardParagraph.innerText = paragraph;
+      let cardContent = document.createElement("div");
+      cardContent.innerHTML = `
+          <h1>${title}</h1
+          <div class="subtitle">${subtitle}</div>
+          <p> ${paragraph}</p>`;
 
-      card.appendChild(cardTitle);
-      card.appendChild(cardSubtitle);
-      card.appendChild(cardParagraph);
+      card.appendChild(cardContent);
 
-      return card;
+      cardsContainer.appendChild(card);
     }
   </script>
 </body>
