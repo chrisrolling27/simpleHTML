@@ -63,10 +63,13 @@
       </div>
     </div>
   </div>
-
   <script>
-    function addCard() {
+    function randomNumber() {
+      let random = Math.floor(Math.random() * 150);
+      return random;
+    }
 
+    function addCard() {
       //form
       let title = document.getElementById("title").value;
       let subtitle = document.getElementById("subtitle").value;
@@ -74,73 +77,52 @@
 
       //card
       let card = document.createElement("div");
-      card.classList = "card";
 
-      //card content
-      let cardContent = document.createElement("div");
-      cardContent.classList = "card-content";
-      cardContent.innerHTML = `
-          <h1>${title}</h1
-          <div class="subtitle">${subtitle}</div>
-          <p> ${paragraph}</p>`;
-
-      //card details and more
-      let cardDetails = document.createElement("div");
-      cardDetails.classList = "card-details";
-
-      let cardDetailsInner = document.createElement("div");
-      cardDetailsInner.classList = "card-details-inner";
-
-      let readMore = document.createElement("div");
-      readMore.classList = "read-more";
-
-      let readArticle = document.createElement("a");
-      readArticle.innerHTML = "<div> Read Article </div>"
-      readArticle.href = `https://en.wikivoyage.org/wiki/${title}`;
-
-      let options = document.createElement("div");
-      options.classList = "options";
-
-      let comments = document.createElement("div");
-      comments.classList = "comments";
-
-      let likes = document.createElement("div");
-      likes.classList = "likes";
-
-      card.appendChild(cardContent);
-      cardContent.appendChild(cardDetails);
-      cardDetails.appendChild(cardDetailsInner);
-      cardDetailsInner.appendChild(readMore);
-      readMore.appendChild(readArticle);
-      cardDetailsInner.appendChild(options);
-      cardDetailsInner.appendChild(comments);
-      cardDetailsInner.appendChild(likes);
+      card.insertAdjacentHTML(
+        "beforeend",
+        `
+      <div
+        class="card-image"
+        style="background-image: url(images/${title}.jpg)"
+      ></div>
+      <div class="card-content">
+        <h1>${title}</h1>
+        <div class="subtitle">${subtitle}</div>
+        <p>
+          ${paragraph}
+        </p>
+        <div class="card-details">
+          <div class="card-details-inner">
+            <div class="read-more">
+              <a class="button" href="https://en.wikivoyage.org/wiki/${title}">
+                Read Article
+              </a>
+            </div>
+            <div class="options">
+              <div class="comments">
+                <a href="#!">
+                  ${randomNumber()} comments
+                </a>
+              </div>
+              <div class="likes">
+                <a href="#!">
+                  ${randomNumber()} likes
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `
+      );
 
       let cardsContainer = document.getElementById("cardsContainer");
-
       cardsContainer.appendChild(card);
     }
   </script>
 </body>
 
-<!-- <div class="card-details">
-  <div class="card-details-inner">
-    <div class="read-more">
-      <a class="button" href="https://en.wikivoyage.org/wiki/Oakland">
-        Read Article
-      </a>
-    </div>
-    <div class="options">
-      <div class="comments">
-        <a href="#!"> <i class="fa fa-comments-o"></i> ?? 16 comments </a>
-      </div>
-      <div class="likes">
-        <a href="#!">
-          <i class="fa fa-heart-o"></i>
-          322 likes
-        </a> -->
-
-<!-- https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/
+<!-- //
+https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/
+//
 https://dev.to/vijaypushkin/dead-simple-state-management-in-vanilla-javascript-24p0 -->
-
-<!-- what is fa fa? -->
