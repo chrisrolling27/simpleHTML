@@ -18,44 +18,37 @@
     </form>
   </div>
 
-  <div id="cardsContainer">
-    <div class="card">
-      <div
-        class="card-image"
-        style="background-image: url(images/oakland.jpg)"
-      ></div>
-      <div class="card-content">
-        <h1>Oakland</h1>
-        <div class="subtitle">The Town</div>
-        <p>
-          Nestled on the east side of the San Francisco Bay, Oakland is a
-          vibrant tapestry of cultural diversity, urban innovation, and natural
-          beauty. With its colorful street murals, eclectic food scene, and
-          stunning lakefront parks, Oakland exudes an undeniable charm. This
-          city is a treasure trove for history buffs, foodies, and nature
-          enthusiasts alike. Beyond its iconic Lake Merritt and historic Jack
-          London Square, Oakland's community spirit and artistic flair make it a
-          warm and inviting place that quickly feels like home.
-        </p>
-        <div class="card-details">
-          <div class="card-details-inner">
-            <div class="read-more">
-              <a class="button" href="https://en.wikivoyage.org/wiki/Oakland">
-                Read Article
-              </a>
-            </div>
-            <div class="options">
-              <div class="comments">
-                <a href="#!">
-                  <i class="fa fa-comments-o"></i>
-                  16 comments
+  <div id="cards-container">
+    <div id="flex-container">
+      <div class="card">
+        <div
+          class="card-image"
+          style="background-image: url(images/oakland.jpg)"
+        ></div>
+        <div class="card-content">
+          <h1>Oakland</h1>
+          <div class="subtitle">The Town</div>
+          <p>
+            Nestled on the east side of the San Francisco Bay, Oakland is a
+            vibrant tapestry of cultural diversity, urban innovation, and
+            natural beauty. With its colorful street murals, eclectic food
+            scene, and stunning lakefront parks, Oakland exudes an undeniable
+            charm.
+          </p>
+          <div class="card-details">
+            <div class="card-details-inner">
+              <div class="read-more">
+                <a class="button" href="https://en.wikivoyage.org/wiki/Oakland">
+                  Read Article
                 </a>
               </div>
-              <div class="likes">
-                <a href="#!">
-                  <i class="fa fa-heart-o"></i>
-                  322 likes
-                </a>
+              <div class="options">
+                <div class="comments">
+                  <a href="#!"> 16 comments </a>
+                </div>
+                <div class="likes">
+                  <a href="#!"> 322 likes </a>
+                </div>
               </div>
             </div>
           </div>
@@ -77,13 +70,14 @@
 
       //card
       let card = document.createElement("div");
+      card.className = "card";
 
       card.insertAdjacentHTML(
         "beforeend",
         `
-      <div
+        <div
         class="card-image"
-        style="background-image: url(images/${title}.jpg)"
+        style="background-image: url(images/oakland.jpg)"
       ></div>
       <div class="card-content">
         <h1>${title}</h1>
@@ -111,13 +105,13 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
+    </div>
       `
       );
 
-      let cardsContainer = document.getElementById("cardsContainer");
-      cardsContainer.appendChild(card);
+      let flexContainer = document.getElementById("flex-container");
+      flexContainer.appendChild(card);
     }
   </script>
 </body>

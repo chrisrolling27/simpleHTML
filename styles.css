@@ -7,7 +7,6 @@
   position: relative;
 }
 
-
 .card-content {
   padding: 30px 30px 110px;
   color: #444444;
@@ -85,13 +84,12 @@ a {
   color: #222222;
 }
 
-.fa {
-  margin-right: 0.25rem;
+#cards-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-#cardsContainer {
-  
-  justify-content: space-around;
-  padding: 20px;
-  gap: 20px;
+#flex-container {
+  display: flex;
 }
