@@ -84,6 +84,10 @@ a {
   color: #222222;
 }
 
+.card:hover {
+  box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.2);
+}
+
 #cards-container {
   max-width: 850px;
   margin: 0 auto;
@@ -92,4 +96,47 @@ a {
 
 #flex-container {
   display: flex;
+  gap: 10px;
+}
+
+#main-button {
+  background-color: red;
+}
+
+.adderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+#cardForm {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+
+#cardForm input,
+#cardForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#main-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#main-button:hover {
+  background-color: #45a049;
 }
