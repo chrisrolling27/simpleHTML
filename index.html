@@ -14,7 +14,7 @@
       <input id="title" type="text" />
       <input id="subtitle" type="text" />
       <textarea id="paragraph" type="textarea"> </textarea>
-      <button id="main-button" onClick="addCard()">Submit!</button>
+      <button id="main-button" onClick="addCard(event)">Submit!</button>
     </form>
   </div>
 
@@ -63,6 +63,8 @@
     }
 
     function addCard() {
+      event.preventDefault();
+
       //form
       let title = document.getElementById("title").value;
       let subtitle = document.getElementById("subtitle").value;
@@ -119,4 +121,6 @@
 <!-- //
 https://yamagata-developers-society.github.io/blog/stateful-components-vanilla-js/
 //
+
 https://dev.to/vijaypushkin/dead-simple-state-management-in-vanilla-javascript-24p0 -->
+
